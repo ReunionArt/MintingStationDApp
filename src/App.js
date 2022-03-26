@@ -56,20 +56,20 @@ function App() {
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
-  const [feedback, setFeedback] = useState("What Personality will your Bee have?");
+  const [feedback, setFeedback] = useState("What Personality will your Gecko have?");
   const [claimingNft, setClaimingNft] = useState(false);
 
   const claimNFTs = (_amount) => {
     if (_amount <= 0) {
       return;
     }
-    setFeedback("Preparing your Twee the Bee NFT...");
+    setFeedback("Preparing your Bored Gecko NFT...");
     setClaimingNft(true);
     blockchain.smartContract.methods
       .mint(blockchain.account, _amount)
       .send({
         gasLimit: "285000",
-        to: "0x688db0131c807a3495c23bc1b25726a76ea31f49",
+        to: "0x0B0498B870386E3695a86eab9f7fcfE6D9006B2B",
         from: blockchain.account,
         value: blockchain.web3.utils.toWei((.02 * _amount).toString(), "ether"),
       })
@@ -80,7 +80,7 @@ function App() {
       })
       .then((receipt) => {
         setFeedback(
-          "Woohoo! You just helped save the Bees! Visit Opensea.io to view your randomly generated NFT!"
+          "Welcom to the Bored Geckos Tropical Club !!! Visit Opensea.io to view your randomly generated NFT!"
         );
         setClaimingNft(false);
         dispatch(fetchData(blockchain.account));
@@ -103,13 +103,13 @@ function App() {
         <s.TextTitle
           style={{ textAlign: "center", fontSize: 36, fontWeight: "bold" }}
         >
-          The Bee Collaborative NFT Minting Hive
+          Bored Geckos Tropical Club Minting Hive
           
         </s.TextTitle>
         <s.SpacerMedium />
-        <ResponsiveWrapper flex={1} style={{ padding: 12 }}>
+        <ResponsiveWrapper flex={1} style={{ padding: 15 }}>
           <s.Container flex={1} jc={"center"} ai={"center"}>
-            <StyledImg alt={"example"} src={i1} />
+            <StyledImg alt={"Logo BGTC"} src={i1} />
             <s.SpacerMedium />
             <s.TextTitle
               style={{ textAlign: "center", fontSize: 26, fontWeight: "bold" }}
@@ -131,10 +131,10 @@ function App() {
                 </s.TextTitle>
                 <s.SpacerSmall />
                 <s.TextDescription style={{ textAlign: "center" }}>
-                  You can still buy and trade TBC NFTs on{" "}
+                  You can still buy and trade BGTC NFTs on{" "}
                   <a
                     target={""}
-                    href={"https://opensea.io/collection/the-bee-collaborative"}
+                    href={"https://opensea.io/collection/bored-geckos-tropical-club"}
                   >
                     Opensea.io
                   </a>
@@ -143,7 +143,7 @@ function App() {
             ) : (
               <>
                 <s.TextTitle style={{ textAlign: "center" }}>
-                  1 Bee NFT costs .02 ETH
+                  1 BGTC NFT costs .05 ETH
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.TextDescription style={{ textAlign: "center" }}>
@@ -201,12 +201,24 @@ function App() {
         <s.SpacerSmall />
         <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
           <s.TextDescription style={{ textAlign: "center", fontSize: 18 }}>
-            50% of all proceeds go towards Charity and adding Liquidity to TBC Token
+            20% We let 5 Geckos go and spread the sun around the world.
+          </s.TextDescription>
+          <s.TextDescription style={{ textAlign: "center", fontSize: 18 }}>
+          40 % BGTC develops YouTube channel, Twitch and dedicated Discord server.
+          </s.TextDescription>
+          <s.TextDescription style={{ textAlign: "center", fontSize: 18 }}>
+          60 % The members-exclusive BGTC Merch store is unlocked, featuring limited-edition t-shirts, hoodies, and other goodies.
+          </s.TextDescription>
+          <s.TextDescription style={{ textAlign: "center", fontSize: 20 }}>
+          80 % The pirate treasure hunt begins. The first to find the treasure cutter and solve the mystery will receive 10 ETH and a Bored Gecko.
+          </s.TextDescription>
+          <s.TextDescription style={{ textAlign: "center", fontSize: 18 }}>
+          90 %The Bored Gecko liquidity pool is launched.          
+          </s.TextDescription>
+          <s.TextDescription style={{ textAlign: "center", fontSize: 18 }}>
+          100 % The Geckos set out to discover other tropical species and introduce them to the whole world.
           </s.TextDescription>
           <s.SpacerSmall />
-          <s.TextDescription style={{ textAlign: "center", fontSize: 14 }}>
-            Bee Rewarded to help Save the Bees #TBCToken<p/>*.*.*Launching_Soon*.*.*
-          </s.TextDescription>
         </s.Container>
       </s.Container>
     </s.Screen>

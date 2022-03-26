@@ -5,7 +5,7 @@ https://docs.ipfs.io/install/ipfs-desktop/
 Add a file to to IPFS, Any file it DOES NOT matter
     Click the 3 dots on right side of the newly uploaded file, and click copy CID
 Alternativly, make a txt file from your terminal to get your CID
-    eg. CID -- QmWVBgiGHv8uahddSNMX5L2nuc8eSN3zSvByvp44w97dwA
+    eg. CID -- QmaHwDXFF5dfroRNx6NC5cUgCnbd72hRkXm6vLiHr589aC
 
 echo "Hello, world!" > hello.txt
 ipfs add hello.txt 
